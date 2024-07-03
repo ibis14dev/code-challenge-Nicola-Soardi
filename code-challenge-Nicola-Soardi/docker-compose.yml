@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_H2_CONSOLE_ENABLED: true
+      SPRING_H2_CONSOLE_PATH: /h2
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:code-challenge-Nicola-Soardi
+      SPRING_DATASOURCE_USERNAME: ns
+      SPRING_DATASOURCE_PASSWORD: code-challenge
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+
