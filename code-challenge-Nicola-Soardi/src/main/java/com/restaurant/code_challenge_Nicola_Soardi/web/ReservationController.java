@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -45,7 +46,7 @@ public class ReservationController {
             @ApiResponse(responseCode = "400", description = "Bad request: unsuccessful submission")
     })
     @PostMapping("/client/{clientId}")
-    public ResponseEntity<Reservation> saveReservation(@RequestBody Reservation reservation, @PathVariable Long clientId) {
+    public ResponseEntity<Reservation> saveReservation(@Valid @RequestBody Reservation reservation, @PathVariable Long clientId) {
         return new ResponseEntity<>(reservationService.saveReservation(reservation,clientId), HttpStatus.CREATED);
     }
 

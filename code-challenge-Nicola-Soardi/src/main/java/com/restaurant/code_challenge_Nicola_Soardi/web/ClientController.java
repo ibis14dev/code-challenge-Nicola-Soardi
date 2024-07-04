@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +35,7 @@ public class ClientController {
             @ApiResponse(responseCode = "400", description = "Bad request: unsuccessful submission")
     })
     @PostMapping
-    public ResponseEntity<Client> saveClient(@RequestBody Client client) {
+    public ResponseEntity<Client> saveClient(@Valid @RequestBody Client client) {
         return new ResponseEntity<>(clientService.saveClient(client), HttpStatus.CREATED);
     }
 

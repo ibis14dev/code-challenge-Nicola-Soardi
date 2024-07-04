@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.time.format.DateTimeFormatter;
 
-@ResponseStatus(code = org.springframework.http.HttpStatus.BAD_REQUEST)
 public class InvalideReservationTimeException extends RuntimeException{
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 

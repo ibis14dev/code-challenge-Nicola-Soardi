@@ -4,6 +4,7 @@ package com.restaurant.code_challenge_Nicola_Soardi.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.*;
 
 import java.util.List;
@@ -26,6 +27,7 @@ public class Client {
     private String name;
 
     @NonNull
+    @Email(message = "Email should be valid")
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
