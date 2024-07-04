@@ -44,7 +44,7 @@ Assicurati di avere installato i seguenti strumenti:
 
 ### Utilizzo di Docker
 
-1. Assicurati di avere il file `Dockerfile` nella directory principale del progetto con il seguente contenuto:
+1. Nella directory principale del progetto è presente il `Dockerfile` con il seguente contenuto:
     ```dockerfile
     FROM openjdk:17-jdk-slim
     VOLUME /tmp
@@ -52,7 +52,7 @@ Assicurati di avere installato i seguenti strumenti:
     ENTRYPOINT ["java","-jar","/app.jar"]
     ```
 
-2. Assicurati di avere il file `docker-compose.yml` nella directory principale del progetto con il seguente contenuto:
+2. Nella directory principale del progetto è presente il `docker-compose.yml` con il seguente contenuto:
     ```yaml
     version: '3.8'
     services:
@@ -75,7 +75,7 @@ Assicurati di avere installato i seguenti strumenti:
     docker-compose up --build
     ```
 
-3. L'applicazione sarà disponibile su `http://localhost:8080`.
+4. L'applicazione sarà disponibile su `http://localhost:8080`.
 
 ### Senza Docker
 
